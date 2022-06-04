@@ -1,2 +1,2 @@
 # Data-Structures
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+This is my github repository where my all DSA problem solutions will be stored whenever is solve one. It has happend because of [LeetHub](https://github.com/QasimWani/LeetHub).
