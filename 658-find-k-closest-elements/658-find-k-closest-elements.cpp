@@ -11,7 +11,10 @@ public:
                 right = mid;
         }
         return vector<int>(A.begin() + left, A.begin() + left + k);
-        /*int mindiffindex=0;
+        /*
+        MY O(NlogN) code
+        
+        int mindiffindex=0;
         vector<int> res;
         for(int i=1;i<arr.size();i++){
             
