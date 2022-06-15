@@ -46,42 +46,5 @@ public:
             gmax=max(lmax,gmax);
         }
         return gmax;
-        
-        
-        
-        /*
-        int gmax=1;
-        for(int i=0;i<words.size();i++){
-            int lmax=1;
-            int j=i+1;
-            int p=i;
-            while(j<words.size()){
-                if(words[p].size()==words[j].size()-1){
-                    int cnt=0;
-                    int a=0;
-                    int b=0;
-                    for(int m=0;m<words[j].size();m++){
-                        if(words[p][a]!=words[j][b]){
-                            cnt++;
-                            b++;
-                        }else{
-                            a++;
-                            b++;
-                        }
-                    }
-                    if(cnt==1){
-                        cout<<words[p]<<" "<<words[j]<<" "<<i<<endl;
-                        lmax++;
-                        p=j;
-                    }
-                    
-                }
-                j++;
-                
-            }
-            gmax=max(gmax,lmax);
-        }
-        return gmax;
-        */
     }
 };
