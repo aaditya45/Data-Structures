@@ -22,11 +22,7 @@ public:
                     }
                 }
                 if(cnt==1){
-                    
-                    //cout<<words[i]<<" "<<words[j]<<" "<<i<<endl;
                     lmax=1+solve(j,words);
-                    //cout<<lmax<<endl;
-                    
                 }
             }
             gmax=max(lmax,gmax);
