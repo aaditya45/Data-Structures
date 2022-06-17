@@ -14,7 +14,8 @@ public:
     
     
     int minimumSize(vector<int>& nums, int maxOperations) {
-        int high=1e9;
+        int high=INT_MIN;
+        for(int i=0;i<nums.size();i++) high=max(high,nums[i]);
         int low=1;
         int ans;
         while(low<=high){
