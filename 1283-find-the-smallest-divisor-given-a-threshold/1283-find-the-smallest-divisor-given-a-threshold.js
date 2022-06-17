@@ -17,7 +17,7 @@ var isValid=function(nums,threshold,mid){
 var smallestDivisor = function(nums, threshold) {
     var high=Math.max.apply(null,nums)
     var low=1
-    
+    var res=1
     
     while(low<=high){
         var mid=(high+low)>>1
