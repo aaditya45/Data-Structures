@@ -4,15 +4,22 @@ class Solution:
         res=[]
         for i in range(0,len(searchWord)):
             substr=searchWord[:i+1]
-            #print(substr)
+        #    print(substr)
             sublist=[]
             m=0
-            for j in range(0,len(products)):
-                if m>=3:
-                    break
-                elif products[j].startswith(substr):
-                    sublist.append(products[j])
-                    m+=1
-            res.append(sublist)
+            high,low=len(products)-1,0
+            
+            while high>low:
+                mid=(high+low)>>1
+                if products[mid].startswith(substr) or products[mid]>=substr:
+                    high=mid
+                else: low=mid+1
+            smlist=[]
+            #print(products[high],substr)
+            for j in range(0,3):
+                if high<=len(products)-1 and products[high].startswith(substr):
+                    smlist.append(products[high])
+                    high+=1
+            res.append(smlist)
         return res
         
