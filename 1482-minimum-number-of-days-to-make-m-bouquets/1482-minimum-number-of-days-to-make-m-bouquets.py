@@ -7,6 +7,7 @@ class Solution:
         while b>=a:
             mid=(a+b)>>1
             x,y,cnt=0,0,0
+            
             while y<len(bloomDay):
                 if bloomDay[y]<=mid:
                     if (y-x)==k-1:
@@ -20,6 +21,7 @@ class Solution:
                 else:
                     y+=1
                     x=y
+            
             if cnt>=m:
                 res=mid
                 b=mid-1
