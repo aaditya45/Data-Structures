@@ -18,7 +18,7 @@ public:
         }
         bool res=true;
         for(int i=0;i<n;i++){
-            res=res&&dfs(i,adj,vis);
+            if(vis[i]!=1) res=res&&dfs(i,adj,vis);
         }
         return res;
         
