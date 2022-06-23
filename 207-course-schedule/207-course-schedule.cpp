@@ -2,17 +2,17 @@ class Solution {
 public:
     int dp[2001];
     bool dfs(int curr,vector<vector<int>>&adj,vector<int>&vis){
-        if(vis[curr]) return false;
-        if(dp[curr]!=-1) return dp[curr];
-        vis[curr]=1;
+        if(vis[curr]==2) return false;
+        //if(dp[curr]!=-1) return dp[curr];
+        vis[curr]=2;
         for(auto num:adj[curr]){
-            if(!dfs(num,adj,vis)) return dp[curr]=false;
+            if(vis[num]!=1&&!dfs(num,adj,vis)) return false;
         }
-        vis[curr]=0;
-        return dp[curr]=true;
+        vis[curr]=1;
+        return true;
     }
     bool canFinish(int n, vector<vector<int>>& p) {
-        memset(dp,-1,sizeof(dp));
+        //memset(dp,-1,sizeof(dp));
         vector<vector<int>> adj(n);
         vector<int> vis(n,0);
         for(auto num:p){
@@ -20,8 +20,8 @@ public:
         }
         bool res=true;
         for(int i=0;i<n;i++){
-            if(dp[i]!=-1) res=res&&dp[i];
-            else res=res&&dfs(i,adj,vis);
+            //if(dp[i]!=-1) res=res&&dp[i];
+            res=res&&dfs(i,adj,vis);
         }
         return res;
         
