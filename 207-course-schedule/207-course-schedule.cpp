@@ -20,7 +20,8 @@ public:
         }
         bool res=true;
         for(int i=0;i<n;i++){
-            res=res&&dfs(i,adj,vis);
+            if(dp[i]!=-1) res=res&&dp[i];
+            else res=res&&dfs(i,adj,vis);
         }
         return res;
         
