@@ -12,7 +12,8 @@ public:
                 k-=nums[j];
                 j++;
             }
+            res=max(res,i-j+1);
         }
-        return i-j;
+        return res;
     }
 };
