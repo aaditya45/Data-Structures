@@ -16,6 +16,5 @@ class Solution:
                     prev=j-i-1
                 i=j
             j+=1
-        if n[i]==0: gmax=max(gmax,prev+j-i-1)
-        else : gmax=max(gmax,prev+j-i-1)
+        gmax=max(gmax,prev+j-i-1)
         return gmax
