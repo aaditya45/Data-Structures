@@ -1,14 +1,13 @@
 class Solution {
 public:
     bool increasingTriplet(vector<int>& n) {
-        vector<int> v;
+        vector<int> v(2,INT_MAX);
+        
         for(int i=0;i<n.size();i++){
-            if(v.size()>=3) return true;
-            vector<int>::iterator it=lower_bound(v.begin(),v.end(),n[i]);
-            if(it==v.end()) v.push_back(n[i]);
-            else *it=n[i];
+            if(n[i]<=v[0]) v[0]=n[i];
+            else if(n[i]<=v[1]) v[1]=n[i];
+            else return true;
         }
-        if(v.size()>=3) return true;
         return false;
     }
 };
