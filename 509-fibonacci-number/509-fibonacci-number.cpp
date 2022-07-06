@@ -1,14 +1,8 @@
 class Solution {
 public:
-    int dp[31];
-    int solve(int n){
+    int fib(int n) {
         if(n==0) return 0;
         if(n==1) return 1;
-        if(dp[n]!=-1) return dp[n];
-        return dp[n]=fib(n-1)+fib(n-2);
-    }
-    int fib(int n) {
-        memset(dp,-1,sizeof(dp));
-        return solve(n);
+        return fib(n-1)+fib(n-2);
     }
 };
