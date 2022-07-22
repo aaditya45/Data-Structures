@@ -11,33 +11,17 @@
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
-        queue<ListNode*> less;
-        queue<ListNode*> more;
-        ListNode*ptr=head;
-        while(ptr!=NULL){
-            if(ptr->val>=x){
-                more.push(ptr);
-            }else{
-                less.push(ptr);
-            }
-            ptr=ptr->next;
+        ListNode node1(0), node2(0);
+        ListNode *p1 = &node1, *p2 = &node2;
+        while (head) {
+            if (head->val < x)
+                p1 = p1->next = head;
+            else
+                p2 = p2->next = head;
+            head = head->next;
         }
-        ListNode *dm=new ListNode(0);
-        ListNode *res=dm;
-        while(!less.empty()){
-            ptr=less.front();
-            less.pop();
-            dm->next=ptr;
-            dm=ptr;
-        }
-        while(!more.empty()){
-            ptr=more.front();
-            more.pop();
-            dm->next=ptr;
-            dm=ptr;
-        }
-        dm->next=NULL;
-        return res->next;
-        
+        p2->next = NULL;
+        p1->next = node2.next;
+        return node1.next;
     }
 };
